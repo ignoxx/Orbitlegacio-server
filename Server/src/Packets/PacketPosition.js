@@ -15,20 +15,22 @@ class PacketPosition extends Packet {
     }
 
     formatData(players) {
-        let formatedPlayers = [];
-        for (index in players) {
-            let player = players[index];
+        // let formatedPlayers = [];
+        // for (index in players) {
+        //     let player = players[index];
 
-            formatedPlayers.push({
-                id: player.id,
-                x: player.loadout.currentShip.x,
-                y: player.loadout.currentShip.y,
-                dx: player.loadout.currentShip.dx,
-                dy: player.loadout.currentShip.dy
-            });
-        }
+        //     formatedPlayers.push({
+        //         id: player.id,
+        //         x: player.loadout.currentShip.x,
+        //         y: player.loadout.currentShip.y,
+        //         dx: player.loadout.currentShip.dx,
+        //         dy: player.loadout.currentShip.dy
+        //     });
+        // }
+        
+        // return formatedPlayers;
 
-        return formatedPlayers;
+        return players;
     }
 }
 

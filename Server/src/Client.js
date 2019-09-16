@@ -60,10 +60,9 @@ class Client {
   onQuickPlay(data) {
     data.username = this.formatUsername(data.username);
 
-    if (this.playerExists()) {
-      //if (DEV_MODE) console.log(chalk.red(`Player '${this.player.id}' already exists, packet rejected`));
+    if (this.playerExists())
       return;
-    }
+
 
     // if this client has a uniqueId, restore his player data
     if (this.isValidUniqueId(data.uniqueId)) {
@@ -74,9 +73,9 @@ class Client {
 
         console.log(chalk.green(`Player restored.. > '${this.player.id}'`));
       }
-      else {
+      else
         this.uniqueId = data.uniqueId;
-      }
+
     }
 
     // create a fresh new player
@@ -90,18 +89,13 @@ class Client {
         username: data.username,
       });
 
-      // tell client his new uniqueId
       new PacketUniqueId().setData(this.uniqueId).emit(this.socket);
 
       if (gameWorld.addPlayer(this.player)) {
 
-        //Respond to all clients, including ourself
         new PacketQuickPlay().setData(this.player).emit(this.io);
 
         console.log(`${this.player.username} connected.. > '${this.player.id}'`);
-      }
-      else {
-        //if (DEV_MODE) console.log(chalk.red(`Client '${this.socket.id}' tried to connect.. > connection was rejected`));
       }
     }
 
@@ -112,7 +106,6 @@ class Client {
     if (this.isPlayerLoggedIn() && !this.isPlayerConnected()) {
       gameWorld.removePlayer(this.player);
 
-      // Tell everyone, ourself not included
       new PacketDisconnect().setData(this.socket.id).broadcast(this.socket);
 
       console.log(chalk.yellow(`Player '${this.player.username}' timed out`));

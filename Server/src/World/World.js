@@ -60,10 +60,8 @@ class World {
     }
 
     addPlayer(Player) {
-        // Limit players per world
-        if (this.players.length + 1 > this.maxPlayer) {
+        if (this.players.length >= this.maxPlayer)
             return false;
-        }
 
         this.players[Player.uid] = Player;
         Player.loggedIn = true;

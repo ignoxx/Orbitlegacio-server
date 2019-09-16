@@ -1,6 +1,4 @@
 const Stats = require('./Stats/Stats');
-const Loadout = require('./Ships/Loadout');
-const ShipOne = require('./Ships/ShipOne')
 
 class Player {
   constructor(data) {
@@ -11,11 +9,7 @@ class Player {
     this.loggedIn = false;
     this.connected = false;
 
-    this.loadout = new Loadout().setCurrentShip(new ShipOne({
-      x: 200,
-      y: 200,
-      spd: 8
-    }));
+    this.ship = undefined;
     
     this.stats = new Stats();
     this.target;

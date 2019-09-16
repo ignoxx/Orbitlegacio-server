@@ -15,16 +15,19 @@ class PacketQuickPlay extends Packet {
     }
 
     formatData(Player) {
-        return {
-            id: Player.id,
-            username: Player.username,
-            x: Player.loadout.currentShip.x,
-            y: Player.loadout.currentShip.y,
-            dx: Player.loadout.currentShip.dx,
-            dy: Player.loadout.currentShip.dy,
-            spd: Player.loadout.currentShip.spd
-        }
+        // return {
+        //     id: Player.id,
+        //     username: Player.username,
+        //     x: Player.loadout.currentShip.x,
+        //     y: Player.loadout.currentShip.y,
+        //     dx: Player.loadout.currentShip.dx,
+        //     dy: Player.loadout.currentShip.dy,
+        //     spd: Player.loadout.currentShip.spd
+        // }
+
+        return Player
     }
+
 }
 
 module.exports = PacketQuickPlay;
