@@ -4,15 +4,26 @@
   "description": "server for orbitlegac.io",
   "main": "Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha",
+    "start": "node Server.js"
   },
   "author": "Ignas Kavaliauskas",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "chalk": "^2.4.2",
     "console-stamp": "^0.2.7",
+    "mocha": "^6.2.0",
+    "mongodb": "^3.3.2",
     "node-gameloop": "^0.1.4",
     "socket.io": "^2.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnasKavaliauskas/Orbitlegacio-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IgnasKavaliauskas/Orbitlegacio-server/issues"
+  },
+  "homepage": "https://github.com/IgnasKavaliauskas/Orbitlegacio-server#readme"
 }
